@@ -1,4 +1,4 @@
-# Embabel Agent Demo
+# Embabel Agentic Framework
 
 A hands-on exploration of the [Embabel](https://github.com/embabel/embabel-agent) agentic AI framework (v0.3.5). This project contains two agents that demonstrate GOAP-based planning, typed domain models, LLM-powered actions, and MCP tool integration with Brave Search.
 
@@ -103,7 +103,7 @@ The app starts an interactive shell. Use the `x` command to run queries:
 ### Company research (with web search)
 
 ```
-embabel> x "Research Personio for my Senior Java Developer interview"
+embabel> x "Research <COMPANY NAME> for my Senior Java Developer interview"
 ```
 
 This triggers the full GOAP pipeline: parse query → web research (3 Brave searches) → generate interview brief. Takes about 60-90 seconds. Output includes company summary, tech stack, talking points, questions to ask, and an opening pitch.
