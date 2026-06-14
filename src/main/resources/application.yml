@@ -1,0 +1,59 @@
+# ============================================================
+# Embabel Agent Demo - Configuration
+# ============================================================
+#
+# Embabel sits ON TOP of Spring AI, so LLM config follows
+# Spring AI conventions. Embabel adds its own properties
+# for agent-level settings.
+
+spring:
+  application:
+    name: embabel-demo
+  main:
+    web-application-type: none
+  ai:
+    mcp:
+      client:
+        stdio:
+          connections:
+            brave-search:
+                          command: /usr/local/bin/npx
+                          args:
+                            - "-y"
+                            - "@brave/brave-search-mcp-server"
+                          env:
+                            BRAVE_API_KEY: ${BRAVE_API_KEY}
+
+
+# ── LLM Configuration ──
+# Embabel supports multiple LLM providers simultaneously.
+# Set the API key as an environment variable:
+#   export ANTHROPIC_API_KEY=your_key
+#   export OPENAI_API_KEY=your_key
+#
+# You can also use local models via Ollama (no API key needed):
+#   ollama pull llama3.2
+#   Then set default-llm: llama3.2
+embabel:
+  models:
+    # Default LLM for all @Action methods that use withDefaultLlm()
+    # Change this to switch ALL actions to a different model at once
+    default-llm: claude-sonnet-4-6
+  agent:
+    platform:
+      llm-operations:
+        data-binding:
+          max-attempts: 3
+        prompts:
+          default-timeout: 120s
+    # You can also assign models by "role" for fine-grained control:
+    # roles:
+    #   reviewer: gpt-4.1           # Use GPT-4.1 for review tasks
+    #   extractor: llama3.2          # Use local Ollama for extraction
+    #   expensive: claude-opus-4-20250514  # Reserve Opus for complex reasoning
+
+# ── Logging ──
+# Show the GOAP planning steps and action execution
+logging:
+  level:
+    com.embabel: DEBUG
