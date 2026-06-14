@@ -1,4 +1,4 @@
-package com.embabel.agent.config;
+package com.embabel.framework.config;
 
 import com.embabel.agent.core.ToolGroup;
 import com.embabel.agent.core.ToolGroupDescription;

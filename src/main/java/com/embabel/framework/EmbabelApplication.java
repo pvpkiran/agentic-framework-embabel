@@ -1,4 +1,4 @@
-package com.embabel.agent;
+package com.embabel.framework;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

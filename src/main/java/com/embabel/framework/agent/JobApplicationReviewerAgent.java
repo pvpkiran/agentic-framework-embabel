@@ -1,13 +1,13 @@
-package com.embabel.agent.agent;
+package com.embabel.framework.agent;
 
 import com.embabel.agent.api.annotation.Action;
 import com.embabel.agent.api.annotation.AchievesGoal;
 import com.embabel.agent.api.annotation.Agent;
 import com.embabel.agent.api.common.OperationContext;
 import com.embabel.agent.domain.io.UserInput;
-import com.embabel.agent.model.FitReport;
-import com.embabel.agent.model.JobApplication;
-import com.embabel.agent.model.SkillAnalysis;
+import com.embabel.framework.model.FitReport;
+import com.embabel.framework.model.JobApplication;
+import com.embabel.framework.model.SkillAnalysis;
 
 @Agent(description = "Reviews a job application by analyzing skill fit between a job description and a resume")
 public class JobApplicationReviewerAgent {

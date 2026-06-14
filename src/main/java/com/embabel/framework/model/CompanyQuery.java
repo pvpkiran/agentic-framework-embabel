@@ -1,4 +1,4 @@
-package com.embabel.agent.model;
+package com.embabel.framework.model;
 
 public record CompanyQuery(
         String companyName,

@@ -1,4 +1,4 @@
-package com.embabel.agent.agent;
+package com.embabel.framework.agent;
 
 import com.embabel.agent.api.annotation.Action;
 import com.embabel.agent.api.annotation.AchievesGoal;
@@ -6,9 +6,9 @@ import com.embabel.agent.api.annotation.Agent;
 import com.embabel.agent.api.common.OperationContext;
 import com.embabel.agent.core.CoreToolGroups;
 import com.embabel.agent.domain.io.UserInput;
-import com.embabel.agent.model.CompanyProfile;
-import com.embabel.agent.model.CompanyQuery;
-import com.embabel.agent.model.InterviewBrief;
+import com.embabel.framework.model.CompanyProfile;
+import com.embabel.framework.model.CompanyQuery;
+import com.embabel.framework.model.InterviewBrief;
 
 @Agent(description = "Researches companies using web search and prepares interview briefings")
 public class CompanyResearchAgent {
