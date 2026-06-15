@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: interview-coach-db
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: interview_coach
+      POSTGRES_USER: coach
+      POSTGRES_PASSWORD: coach123
+    volumes:
+      - ./db/init.sql:/docker-entrypoint-initdb.d/01-init.sql
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
